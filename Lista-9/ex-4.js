@@ -1,1 +1,19 @@
-vetorTeste = [1,1,2,3,4,5,6,7,7,7,8,8,8,9,9,9,10,10,10,1,20,20,20,30,40,40,40]
+const input = require("readline-sync")
+
+const listaNomes = ["jose", "Maria", "João", "Guilherme", "Thifany", "Nicole", "Natalie", "Gabriel"];
+
+function chamarNome (nomeBusca) {
+    for (let i = 0; i < listaNomes.length; i++) {
+    if (listaNomes[i] === nomeBusca) {
+        return true
+        }
+    return false
+    }
+}
+const nomeDigitado = input.question('Digite um nome para buscar na lista: ');
+
+if (chamarNome(nomeDigitado) == true) {
+    console.log(`Sucesso: O nome "${nomeDigitado}" está na lista!`);
+} else {
+    console.log(`Aviso: O nome "${nomeDigitado}" NÃO foi encontrado.`);
+}
