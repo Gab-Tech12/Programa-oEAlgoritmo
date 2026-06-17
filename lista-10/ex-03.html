@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="contador">0</h2>
+
+<button onclick="somar()">
+    Clique Aqui
+</button>
+<script>
+    let numero = 0
+    function somar() {
+    numero = numero +1
+    let contador = document.getElementById('contador');
+    var novoP = document.createElement('p');
+    novoP.innerText = numero ;
+    document.body.appendChild(novoP);
+    
+    }
+    
+</script>
+</body>
+</html>

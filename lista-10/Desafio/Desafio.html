@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Cadastro de Pessoas</title>
+    <link rel="stylesheet" href="/Desafio/Styles/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Sistema de Cadastro de Pessoas</h2>
+
+        <input type="text" id="campoNome" placeholder="Nome">
+        <input type="number" id="campoIdade" placeholder="Idade">
+        <button onclick="cadastrar()">Cadastrar</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                </tr>
+            </thead>
+            <tbody id="corpoTabela">
+                </tbody>
+        </table>
+
+        <div class="contador-container">
+            Total de cadastrados: <span id="total">0</span>
+        </div>
+    </div>
+
+    <script>
+        let totalCadastrados = 0;
+
+        function cadastrar() {
+            let nome = document.getElementById('campoNome').value.trim();
+            let idade = document.getElementById('campoIdade').value.trim();
+
+            if (nome === "" || idade === "") {
+                alert("Por favor, preencha todos os campos!");
+                return;
+            }
+
+            let novaLinha = document.createElement('tr');
+            let celulaNome = document.createElement('td');
+            let celulaIdade = document.createElement('td');
+
+            celulaNome.innerText = nome;
+            celulaIdade.innerText = idade;
+
+            novaLinha.appendChild(celulaNome);
+            novaLinha.appendChild(celulaIdade);
+
+            document.getElementById('corpoTabela').appendChild(novaLinha);
+
+            totalCadastrados = totalCadastrados + 1;
+            document.getElementById('total').innerText = totalCadastrados;
+
+            document.getElementById('campoNome').value = "";
+            document.getElementById('campoIdade').value = "";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 10</title>
+</head>
+<body>
+    <input
+    type="text"
+    id="usuario"
+    placeholder="Usuário"
+    >
+
+    <button onclick="validar()">
+    Entrar
+    </button>
+
+    <p id="mensagem"></p>
+
+    <script>
+        function validar() {
+            // 1. Pega o valor digitado e remove espaços inúteis nas pontas
+            let nomeUsuario = document.getElementById('usuario').value.trim();
+            
+            // 2. Pega o parágrafo onde vamos mostrar a mensagem
+            let paragrafoMensagem = document.getElementById('mensagem');
+
+            // 3. A Condicional: Se estiver vazio...
+            if (nomeUsuario === "") {
+                paragrafoMensagem.innerText = "Digite um usuário!";
+                paragrafoMensagem.style.color = "red";
+            } 
+            // Caso contrário (se tiver algo digitado)...
+            else {
+                paragrafoMensagem.innerText = "Login realizado com sucesso!";
+                paragrafoMensagem.style.color = "green";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img
+    id="lampada"
+    src="./image/lampada apagada.png"
+    width="100"
+>
+
+<br><br>
+
+<button onclick="acender()">
+    Acender
+</button>
+
+<button onclick="apagar()">
+    Apagar
+</button>
+<script>
+    let lampada = document.getElementById("lampada");
+    function acender() {
+        lampada.src = "./image/lampada acesa.jpg"
+        document.body.style.backgroundColor = '#fff3cd';
+    }
+
+    function apagar() {
+        lampada.src = "./image/lampada apagada.png"
+        document.body.style.backgroundColor = 'white';
+    }
+</script>
+</body>
+</html>

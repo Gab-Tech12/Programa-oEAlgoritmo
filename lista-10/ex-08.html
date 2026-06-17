@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+</head>
+<body>
+
+    <input 
+        type="text" 
+        id="tarefa" 
+        placeholder="Nova tarefa"
+    >
+
+    <button onclick="adicionar()">Adicionar</button>
+
+    <ul id="lista"></ul>
+
+    <script>
+        function adicionar() {
+            let textoTarefa = document.getElementById('tarefa').value;
+
+            
+            if (textoTarefa.trim() === "") {
+                alert("Por favor, digite uma tarefa!");
+                return; 
+            }
+
+
+            let novoItem = document.createElement('li');
+
+            novoItem.innerText = textoTarefa;
+
+            let listaUl = document.getElementById('lista');
+            listaUl.appendChild(novoItem);
+            document.getElementById('tarefa').value = "";
+        }
+    </script>
+
+</body>
+</html>

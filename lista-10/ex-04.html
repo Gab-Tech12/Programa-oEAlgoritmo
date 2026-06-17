@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="texto">
+    Este texto pode desaparecer.
+</p>
+
+<button onclick="ocultar()">
+    Ocultar
+</button>
+
+<button onclick="mostrar()">
+    Mostrar
+</button>
+<script>
+    let texto = document.getElementById('texto');
+    function ocultar() {
+        texto.style.display = "none"
+    }
+    function mostrar() {
+        texto.style.display = "block"
+    }
+</script>
+<script>
+
+</script>
+</body>
+</html>
